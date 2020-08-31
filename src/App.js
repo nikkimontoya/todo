@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import TaskList from "./components/TaskList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const tasks = [
+        {
+            title: 'Take a shower',
+            body: 'Go to the shower and wash myself'
+        },
+        {
+            title: 'Go to work',
+            body: 'Go to the work and work there'
+        }]
+    return (
+        <Container>
+            <Row>
+                <Col xs={12}>
+                    <TaskList tasks={tasks}/>
+                </Col>
+            </Row>
+        </Container>
+    );
 }
 
 export default App;
