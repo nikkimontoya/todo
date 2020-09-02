@@ -1,8 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {
-    Modal,
-    ButtonGroup, Button, Container, Row, Col, Form
-} from 'react-bootstrap';
+import {Modal, Button, Container, Row, Col, Form} from 'react-bootstrap';
 
 
 export default function EditingDialog(props) {
@@ -29,7 +26,7 @@ export default function EditingDialog(props) {
     return (
         <Modal show={props.open} onHide={props.onClose}>
             <Modal.Header closeButton>
-                <Modal.Title>{props.task.title == '' ? 'Add a new' : 'Edit the'} task</Modal.Title>
+                <Modal.Title>{props.task.title === '' ? 'Add a new' : 'Edit the'} task</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Container>
