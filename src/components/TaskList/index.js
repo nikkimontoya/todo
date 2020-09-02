@@ -20,6 +20,7 @@ export default function TaskList(props) {
             key={index}
             task={task}
             onEdit={props.onEdit}
+            onView={props.onView}
             onDelete={props.onDelete}
             onMarkCompleted={props.onMarkCompleted}
         />
