@@ -3,9 +3,29 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import TaskListItem from "./TaskListItem";
 
 export default function TaskList(props) {
-    const tasks = Object.values(props.tasks).map((task, index) => <TaskListItem key={index} task={task} onEdit={props.onEdit}/>)
+    const sortTasks = (a, b) => {
+        if (a.title > b.title) {
+            return -1;
+        }
 
-    return(
+        if (a.title < b.title) {
+            return 1;
+        }
+
+        return 0;
+    }
+
+    const tasks = Object.values(props.tasks).sort(sortTasks).map((task, index) => (
+        <TaskListItem
+            key={index}
+            task={task}
+            onEdit={props.onEdit}
+            onDelete={props.onDelete}
+            onMarkCompleted={props.onMarkCompleted}
+        />
+    ));
+
+    return (
         <ListGroup>{tasks}</ListGroup>
     );
 }
