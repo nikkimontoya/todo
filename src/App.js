@@ -24,7 +24,7 @@ function App() {
     const emptyTask = {title: '', body: '', completed: false};
 
     // All the tasks
-    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')));
+    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || {});
 
     // The task being edited at the moment
     const [editingTask, setEditingTask] = useState(emptyTask);
